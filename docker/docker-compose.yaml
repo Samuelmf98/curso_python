@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  jupyter:
+    build:
+      context: .. 
+      dockerfile: docker/Dockerfile  # Ruta al directorio que contiene el Dockerfile
+    ports:
+      - "8888:8888"  # Mapea el puerto del host al puerto del contenedor
+    volumes:
+      - ../curso_python:/home/jovyan/samuel # Mapea una carpeta local al directorio de trabajo de Jupyter
+    container_name: jupyter-notebook
